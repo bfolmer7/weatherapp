@@ -31,6 +31,8 @@ def get_weather():
         weather_data = weather_response.json()
         weather_main = weather_data['weather'][0]['main']
         icon_filename = f"{weather_main}.svg"
+        feels_like = weather_data['main']['feels_like']
+        visibility = weather_data['visibility'] 
 
         forecast_response = requests.get(
             f"https://api.openweathermap.org/data/2.5/forecast?q={user_input}&units=metric&appid={api_key}"
@@ -46,12 +48,13 @@ def get_weather():
             user_input=user_input,
             weather_data=weather_data,
             forecast_result=forecast_result,
-            icon_filename=icon_filename
+            icon_filename=icon_filename,
+            feels_like=feels_like,
+            visibility=visibility
         )
     except Exception as e:
         logging.error(f"Error in get_weather: {e}", exc_info=True)
         return render_template('error.html', error=str(e))
-
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -6,40 +6,60 @@
     <title>Weather Forecast</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            background-color: #e6ecf0; 
+            color: #333; 
+            font-family: 'Arial', sans-serif; 
+        }
+        .weather-header {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .temperature {
+            font-size: 4em; 
+            font-weight: bold;
+            margin-bottom: 0; 
+        }
+        .weather-condition {
+            font-size: 1.2em; 
+            color: #555; 
+        }
+        .forecast {
+            display: flex;
+            justify-content: space-around; 
+            align-items: center; 
+            padding: 10px;
+            margin: 20px; 
+            background-color: #fff; 
+            border-radius: 20px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+        .forecast-item {
+            text-align: center; 
+            padding: 5px 10px; 
+        }
         .weather-icon {
-            width: 100px;
+            width: 30px; 
             height: auto;
+            margin-bottom: 5px; 
         }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="card text-center mb-3">
-            <div class="card-header">
-                Weather Forecast for {{ user_input }}
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">{{ weather_data.weather[0].description }}</h5>
-                <p class="card-text">
-                    Current Temperature: {{ weather_data.main.temp }}&deg;C<br>
-                    Highs of {{ weather_data.main.temp_max }}&deg;C, Lows of {{ weather_data.main.temp_min }}&deg;C
-                </p>
-                <img src="{{ url_for('static', filename='icons/' ~ icon_filename) }}" class="weather-icon" alt="Weather Icon">
-            </div>
+    <div class="container-fluid">
+        <div class="weather-header">
+            <div class="temperature">{{ weather_data.main.temp }}&deg;C</div>
+            <h1>{{ user_input }}</h1>
+            <div class="weather-condition">{{ weather_data.weather[0].description }}</div>
         </div>
 
-        <h3 class="mb-3">Forecast</h3>
-        <div class="row">
+        <div class="forecast">
             {% for forecast in forecast_result %}
-                {% if loop.index <= 8 %}
-                <div class="col-md-3 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ forecast.dt_txt }}</h5>
-                            <p class="card-text">{{ forecast.main.temp }}&deg;C</p>
-                            <img src="{{ url_for('static', filename='icons/' ~ icon_filename) }}" class="weather-icon" alt="Weather Icon">
-                        </div>
-                    </div>
+                {% if loop.index <= 8 %} 
+                <div class="forecast-item">
+                    <img src="{{ url_for('static', filename='icons/' ~ icon_filename) }}" class="weather-icon" alt="Weather Icon">
+                    <div>{{ forecast.dt_txt.split(' ')[1][:5] }}</div> 
+                    <div>{{ forecast.main.temp }}&deg;C</div>
                 </div>
                 {% endif %}
             {% endfor %}
@@ -49,6 +69,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
 </body>
 </html>
