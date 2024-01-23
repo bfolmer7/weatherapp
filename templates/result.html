@@ -3,38 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App - Result</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Custom CSS to center content vertically */
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Align content to the top of the flex container */
-            align-items: center;
-            min-height: 100vh; /* Ensure the content takes at least the full viewport height */
-        }
-
-        /* Center only the dynamic content */
-        .center-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Center content vertically within the container */
-            align-items: center;
-            flex-grow: 1; /* Allow the content to grow and take available space */
+        .weather-icon {
+            width: 100px;
+            height: auto;
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-semibold text-center text-gray-800">Weather App</h1>
-    </div>
-    <div class="center-content">
-        <div class="bg-white p-4 rounded-lg shadow-lg">
-            <div class="text-xl font-semibold text-center text-gray-800">
-                {{ result | safe }}
+<body>
+    <div class="container mt-5">
+        <div class="card text-center mb-3">
+            <div class="card-header">
+                Weather Forecast for {{ user_input }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ weather_data.weather[0].description }}</h5>
+                <p class="card-text">
+                    Current Temperature: {{ weather_data.main.temp }}&deg;C<br>
+                    Highs of {{ weather_data.main.temp_max }}&deg;C, Lows of {{ weather_data.main.temp_min }}&deg;C
+                </p>
+                <img src="{{ url_for('static', filename='icons/' ~ icon_filename) }}" class="weather-icon" alt="Weather Icon">
             </div>
         </div>
+
+        <h3 class="mb-3">Forecast</h3>
+        <div class="row">
+            {% for forecast in forecast_result %}
+                {% if loop.index <= 8 %}
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ forecast.dt_txt }}</h5>
+                            <p class="card-text">{{ forecast.main.temp }}&deg;C</p>
+                            <img src="{{ url_for('static', filename='icons/' ~ icon_filename) }}" class="weather-icon" alt="Weather Icon">
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
