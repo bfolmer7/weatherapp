@@ -52,5 +52,6 @@ def get_weather():
         logging.error(f"Error in get_weather: {e}", exc_info=True)
         return render_template('error.html', error=str(e))
 
+
 if __name__ == "__main__":
     app.run(debug=True)
