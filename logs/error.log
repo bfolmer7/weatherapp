@@ -1,0 +1,648 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 473
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15931
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 10:56:11] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 10:56:11] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 472
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15928
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 10:56:15] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 10:56:15] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 473
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15931
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:00:08] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:00:08] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 476
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15929
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:00:11] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:00:11] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 476
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15931
+ERROR:root:Error in get_weather: 'now' is undefined
+Traceback (most recent call last):
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 48, in get_weather
+    return render_template(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/bofolmer/Downloads/weatherapp/templates/result.html", line 41, in top-level template code
+    {% for hour in forecast_result[now.strftime('%Y-%m-%d')] %}
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'now' is undefined
+ERROR:app:Exception on /weather [POST]
+Traceback (most recent call last):
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 48, in get_weather
+    return render_template(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/bofolmer/Downloads/weatherapp/templates/result.html", line 41, in top-level template code
+    {% for hour in forecast_result[now.strftime('%Y-%m-%d')] %}
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'now' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 57, in get_weather
+    return render_template('error.html', error=str(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:01:24] "[35m[1mPOST /weather HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:01:24] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 473
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15931
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:03:43] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:03:43] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 482
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15919
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:03:48] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:03:48] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 483
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15918
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:15:13] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:15:14] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 483
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15918
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:15:22] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:15:22] "[33mGET /static/icons/compass.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:15:22] "GET /static/icons/sunny.svg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:15:22] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 483
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15918
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:20:48] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:20:49] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 483
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15918
+ERROR:root:Error in get_weather: 'current_weather' is undefined
+Traceback (most recent call last):
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 48, in get_weather
+    return render_template(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/bofolmer/Downloads/weatherapp/templates/result.html", line 21, in top-level template code
+    <h1 class="text-5xl font-bold">{{ current_weather.temperature }}°</h1>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'current_weather' is undefined
+ERROR:app:Exception on /weather [POST]
+Traceback (most recent call last):
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 48, in get_weather
+    return render_template(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/bofolmer/Downloads/weatherapp/templates/result.html", line 21, in top-level template code
+    <h1 class="text-5xl font-bold">{{ current_weather.temperature }}°</h1>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'current_weather' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 57, in get_weather
+    return render_template('error.html', error=str(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:24:27] "[35m[1mPOST /weather HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:24:27] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 483
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15918
+ERROR:root:Error in get_weather: 'current_weather' is undefined
+Traceback (most recent call last):
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 48, in get_weather
+    return render_template(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/bofolmer/Downloads/weatherapp/templates/result.html", line 21, in top-level template code
+    <h1 class="text-5xl font-bold">{{ current_weather.temperature }}°</h1>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'current_weather' is undefined
+ERROR:app:Exception on /weather [POST]
+Traceback (most recent call last):
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 48, in get_weather
+    return render_template(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/bofolmer/Downloads/weatherapp/templates/result.html", line 21, in top-level template code
+    <h1 class="text-5xl font-bold">{{ current_weather.temperature }}°</h1>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'current_weather' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 57, in get_weather
+    return render_template('error.html', error=str(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:24:30] "[35m[1mPOST /weather HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:24:30] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 483
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15919
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:43:56] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:43:57] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:43:57] "GET /static/icons/clouds.svg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:43:57] "[33mGET /static/icons/04d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:43:57] "[33mGET /static/icons/10n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:43:57] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:43:57] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:43:59] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 482
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Alkmaar&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15917
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:44:00] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:44:00] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:44:00] "[36mGET /static/icons/clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:44:00] "[33mGET /static/icons/04d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:44:00] "[33mGET /static/icons/10n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:44:00] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:44:00] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=New%20York&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 476
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=New%20York&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 16142
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:03] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:04] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:04] "[36mGET /static/icons/clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:04] "[33mGET /static/icons/04d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:04] "[33mGET /static/icons/10d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:04] "[33mGET /static/icons/10n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:04] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:04] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=New%20York&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 475
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=New%20York&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 16144
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:07] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:07] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:07] "[36mGET /static/icons/clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:07] "[33mGET /static/icons/04d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:07] "[33mGET /static/icons/10d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:07] "[33mGET /static/icons/10n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:07] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:07] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 471
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 16112
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:13] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:13] "[33mGET /static/icons/01n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:13] "[36mGET /static/icons/clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:13] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:13] "[33mGET /static/icons/02n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:13] "[33mGET /static/icons/01d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:13] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:13] "[33mGET /static/icons/01n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:53:13] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 471
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 16112
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:52] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:52] "[33mGET /static/icons/01n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:52] "[36mGET /static/icons/clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:52] "[33mGET /static/icons/02n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:52] "[33mGET /static/icons/01d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:52] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:52] "[33mGET /static/icons/01n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:52] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:52] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 471
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 16113
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:55] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:55] "[36mGET /static/icons/clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:55] "[33mGET /static/icons/01n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:55] "[33mGET /static/icons/02n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:55] "[33mGET /static/icons/01d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:55] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:55] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:55] "[33mGET /static/icons/01n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 11:55:55] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 471
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 16112
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:04] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:04] "[33mGET /static/icons/01n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:04] "GET /static/icons/Clouds.svg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:04] "[33mGET /static/icons/02n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:04] "[33mGET /static/icons/01d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:04] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:04] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:04] "[33mGET /static/icons/01n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:04] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 471
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 16113
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:07] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:07] "[33mGET /static/icons/01n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:07] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:07] "[33mGET /static/icons/02n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:07] "[33mGET /static/icons/01d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:07] "[33mGET /static/icons/01n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:07] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:07] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:07] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 466
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15934
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:13] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:13] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:13] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:13] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:13] "[33mGET /static/icons/10n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:13] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:13] "[33mGET /static/icons/04d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:13] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 466
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15936
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:19] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:19] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:19] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:19] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:19] "[33mGET /static/icons/10n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:19] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:19] "[33mGET /static/icons/04d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:04:19] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15936
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:05] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:05] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:05] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:05] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:05] "[33mGET /static/icons/10n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:05] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:05] "[33mGET /static/icons/04d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:05] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15936
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:07] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:07] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:07] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:07] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:07] "[33mGET /static/icons/10n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:07] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:07] "[33mGET /static/icons/04d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:05:07] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 465
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15936
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:22] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:22] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:22] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:22] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:22] "[33mGET /static/icons/10n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:22] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:22] "[33mGET /static/icons/04d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:22] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 466
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15934
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:25] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:25] "[33mGET /static/icons/02d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:25] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:25] "[33mGET /static/icons/03d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:25] "[33mGET /static/icons/10n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:25] "[33mGET /static/icons/04n.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:25] "[33mGET /static/icons/04d.svg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:13:25] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15935
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:21:08] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:21:08] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:21:09] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 478
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15936
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:21:17] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:21:17] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:21:17] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15934
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:21:49] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:21:49] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:21:49] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15935
+ERROR:root:Error in get_weather: Encountered unknown tag 'endif'.
+Traceback (most recent call last):
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 44, in get_weather
+    return render_template(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/bofolmer/Downloads/weatherapp/templates/result.html", line 42, in template
+    {% endif %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endif'.
+ERROR:app:Exception on /weather [POST]
+Traceback (most recent call last):
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 44, in get_weather
+    return render_template(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/bofolmer/Downloads/weatherapp/templates/result.html", line 42, in template
+    {% endif %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endif'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/bofolmer/Downloads/weatherapp/app.py", line 53, in get_weather
+    return render_template('error.html', error=str(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:22:24] "[35m[1mPOST /weather HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:22:25] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15935
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:22:40] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:22:40] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:22:40] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:29:16] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:29:16] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:29:16] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Amsterdam&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15935
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:29:19] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:29:19] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:29:19] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 471
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Sydney&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 16113
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:00] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:00] "[36mGET /static/icons/Clouds.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:00] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=London&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=London&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15997
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:05] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:05] "GET /static/icons/Rain.svg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:05] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=London&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=London&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 15997
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:09] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:09] "[36mGET /static/icons/Rain.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:09] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Johannesburg&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 471
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Johannesburg&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 16038
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:14] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:14] "GET /static/icons/Clear.svg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:14] "[33mGET /cart.json HTTP/1.1[0m" 404 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/weather?q=Johannesburg&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 471
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG:urllib3.connectionpool:https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=Johannesburg&units=metric&appid=a61406e23e9f080057d7f261289d26ae HTTP/1.1" 200 16038
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:17] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:17] "[36mGET /static/icons/Clear.svg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [23/Jan/2024 12:30:17] "[33mGET /cart.json HTTP/1.1[0m" 404 -

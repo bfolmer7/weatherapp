@@ -1,7 +1,16 @@
 from flask import Flask, request, render_template
 import requests
+import logging
+from datetime import datetime, timedelta
+
+logging.basicConfig(filename='logs/error.log', level=logging.DEBUG)
 
 app = Flask(__name__)
+
+def get_next_5_days():
+    today = datetime.now()
+    next_5_days = [today + timedelta(days=i) for i in range(5)]
+    return [day.strftime("%Y-%m-%d") for day in next_5_days]
 
 @app.route('/')
 def index():
@@ -12,30 +21,36 @@ def get_weather():
     api_key = 'a61406e23e9f080057d7f261289d26ae'
     user_input = request.form.get('city')
 
-    weather_data = requests.get(
-        f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&units=metric&APPID={api_key}"
-    )
+    try:
+        weather_response = requests.get(
+            f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&units=metric&appid={api_key}"
+        )
+        if weather_response.status_code != 200:
+            raise ValueError(f"Weather API call failed with status code {weather_response.status_code}")
 
-    if weather_data.status_code == 404:
-        result = "No City Found"
-    else:
-        weather = weather_data.json()['weather'][0]['main']
-        temp = round(weather_data.json()['main']['temp'])
-        country = weather_data.json()['sys']['country']
-        feels_like = round(weather_data.json()['main']['feels_like'])
+        weather_data = weather_response.json()
+        weather_main = weather_data['weather'][0]['main']
+        icon_filename = f"{weather_main}.svg"
 
-        result = f"The weather in {user_input}, {country} is {weather}\n"
-        result += f"The temperature in {user_input}, {country} is {temp}ºC\n"
-        result += f"It currently feels like {feels_like}ºC in {user_input}\n"
+        forecast_response = requests.get(
+            f"https://api.openweathermap.org/data/2.5/forecast?q={user_input}&units=metric&appid={api_key}"
+        )
+        if forecast_response.status_code != 200:
+            raise ValueError(f"Forecast API call failed with status code {forecast_response.status_code}")
 
-        if weather == "Clouds":
-            result += "☁"
-        elif weather == "Clear":
-            result += "☀"
-        elif weather == "Drizzle":
-            result += "🌧"
+        forecast_data = forecast_response.json()
+        forecast_result = forecast_data['list']
 
-    return render_template('result.html', result=result)
+        return render_template(
+            'result.html',
+            user_input=user_input,
+            weather_data=weather_data,
+            forecast_result=forecast_result,
+            icon_filename=icon_filename
+        )
+    except Exception as e:
+        logging.error(f"Error in get_weather: {e}", exc_info=True)
+        return render_template('error.html', error=str(e))
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
